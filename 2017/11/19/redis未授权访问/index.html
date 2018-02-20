@@ -11,7 +11,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
-
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
 
 
 
@@ -425,8 +434,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/15/阿里云centos 6.8 pptp搭建笔记/" rel="next" title="阿里云centos 6.8 pptp搭建笔记">
-                <i class="fa fa-chevron-left"></i> 阿里云centos 6.8 pptp搭建笔记
+              <a href="/2017/10/15/hexo折腾笔记/" rel="next" title="hexo折腾笔记">
+                <i class="fa fa-chevron-left"></i> hexo折腾笔记
               </a>
             
           </div>
@@ -434,10 +443,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/20/test/" rel="prev" title="test">
-                test <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -539,8 +544,8 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/tags.html">
-                  <span class="site-state-item-count">11</span>
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
